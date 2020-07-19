@@ -38,9 +38,9 @@ function load() {
             datos = data
             render(data)
         })
-} 
+}
 
-function select(carrera) {            
+function select(carrera) {
     d = datos.filter(function (d, i) {
         if (carrera == 'Todos') {
             return true
@@ -49,3 +49,4 @@ function select(carrera) {
     })
     render(d)
 }
+
