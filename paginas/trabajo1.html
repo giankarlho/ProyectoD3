@@ -18,7 +18,7 @@
 <body onload="graficar()">
     <!-- navbar -->
     <div class="navbar-navbar-expand-lg navbar-light bg-light shadow mb-4">
-        <div class="container-fluid-nav text-center">            
+        <div class="container-fluid-nav text-center">
             <a href="/index.html"><img src="/img/logoVG.png" class="text-center logoVG"></a> &nbsp&nbsp&nbsp
             <a href="/index.html"><img src="/img/unir.png" class="text-center logoUnir"></a>
         </div>
@@ -38,18 +38,25 @@
                     <img src="/img/fotogvs.jpg" class="avatar rounded-circle"><br>
                     <h4>Giancarlo Valencia Sotomayor</h4>
                 </div>
-                <p class="texto-contenido">Soy un joven entusiasta de casi 40 años, aficionado de la tecnología, expedientes X y del buen comer. Ing. Industrial y de Sistemas con experiencia en Gestión Pública y Privada. 
-                    Y desde hace 4 años laboro como docente en el IEST Valle Grande, dictando cursos de: Algoritmo y Estructura de Datos, Programación Estructurada con IOT, Programación Orientada a Objetos, Taller de Programación I y II, Telemática I, Desarrollo Empresarial con Java, Machine Learning, Tecnologías de Internet, Sistemas Distribuidos y Seguridad Informática. Y los fines de semana me ocupo de la gestión de la cocina y limpieza del hogar con 5 hijos.</p>
+                <p class="texto-contenido">Soy un joven entusiasta de casi 40 años, aficionado de la tecnología,
+                    expedientes X y del buen comer. Ing. Industrial y de Sistemas con experiencia en Gestión Pública y
+                    Privada.
+                    Y desde hace 4 años laboro como docente en el IEST Valle Grande, dictando cursos de: Algoritmo y
+                    Estructura de Datos, Programación Estructurada con IOT, Programación Orientada a Objetos, Taller de
+                    Programación I y II, Telemática I, Desarrollo Empresarial con Java, Machine Learning, Tecnologías de
+                    Internet, Sistemas Distribuidos y Seguridad Informática. Y los fines de semana me ocupo de la
+                    gestión de la cocina y limpieza del hogar con 5 hijos.</p>
                 <div class="text-center">
-                    <a href="https://www.facebook.com/Giankarlo.V.S/" class="fb-ic mr-3" role="button" target="_blank"><i
-                            class="fab fa-lg fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/Giankarlo.V.S/" class="fb-ic mr-3" role="button"
+                        target="_blank"><i class="fab fa-lg fa-facebook-f"></i></a>
                     <a href="https://www.linkedin.com/in/giancarlo-valencia-sotomayor-a29a6640" class="li-ic mr-3"
                         role="button" target="_blank"><i class="fab fa-lg fa-linkedin-in"></i></a>
                     <a href="https://www.youtube.com/channel/UCAy8Qkj1AQuqnKiogNdshBA?view_as=subscriber"
                         class="yt-ic mr-3" role="button" target="_blank"><i class="fab fa-lg fa-youtube"></i></a>
                     <a href="https://github.com/giankarlho" class="git-ic mr-3" role="button" target="_blank"><i
                             class="fab fa-lg fa-github"></i></a>
-                    <a href="paginas/contacto.html" class="email-ic mr-3" role="button" target="_blank"><i class="far fa-lg fa-envelope"></i></a>
+                    <a href="paginas/contacto.html" class="email-ic mr-3" role="button" target="_blank"><i
+                            class="far fa-lg fa-envelope"></i></a>
                 </div>
 
             </div>
@@ -70,11 +77,13 @@
                             onclick="load('DF')" role="tab" aria-controls="pills-profile"
                             aria-selected="false">Disfunción Familiar</a>
                     </li>
+                    <!-- 
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
                             onclick="load('Edades')" role="tab" aria-controls="pills-contact"
                             aria-selected="false">Edadades por Carrera</a>
                     </li>
+                    -->
                 </ul>
 
                 <div class="tab-content" id="pills-tabContent">
@@ -84,23 +93,38 @@
                             <div class="media-body">
                                 <h5 class="mt-0 mb-1 texto-contenido"></h5>
                                 La Inteligencia Emocional es uno de los conceptos clave para comprender el rumbo que ha
-                                tomado la psicología en las últimas décadas. De un modelo preocupado fundamentalmente en
-                                los trastornos mentales por un lado y por las capacidades de razonamiento por el otro,
-                                se ha pasado a otro en el que se considera que las emociones son algo intrínseco a
-                                nuestro comportamiento y actividad mental no patológica y que, por consiguiente, son
-                                algo que debe ser estudiado para comprender cómo somos.
+                                tomado la psicología en las últimas décadas. Para mayor información: <a
+                                    href="https://psicologiaymente.com/inteligencia/inteligencia-emocional">aquí</a>
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <h5>Rangos de Interpretación</h5>
+                                                <li>130 y más Marcadamente Alta.</li>
+                                                <li>120 a 129 Muy Alta.</li>
+                                                <li>110 a 119 Alta</li>
+                                                <li>90 a 109 Promedio</li>
+                                                <li>80 a 89 Baja, necesita mejorar.</li>
+                                                <li>70 a 79 Muy baja, necesita mejorar.</li>
+                                                <li>69 y menos Marcadamente baja, necesita mejorar.</li>
+                                            </ul>
+                                        </td>
+                                        <td><img src="/img/inteligencia.jpg" class="mr-3 captura2 rounded"></td>
+                                    </tr>
+
+                                </table>
+
                             </div>
-                            <img src="/img/inteligencia.jpg" class="mr-3 captura2 rounded">
+
                         </div>
                         <div>
-                            <button type="button" class="btn btn-warning" onclick="select('PA')">
-                                <i class="fas fa-tractor"></i>  Producción Agraria</button>
+                            <button type="button" class="btn btn-outline-success" onclick="select('PA')">
+                                <i class="fas fa-tractor"></i> Producción Agraria</button>
                             <button type="button" class="btn btn-outline-primary" onclick="select('AS')">
-                                <i class="fas fa-laptop-code"></i>  Análisis de Sistemas</button>
+                                <i class="fas fa-laptop-code"></i> Análisis de Sistemas</button>
                             <button type="button" class="btn btn-dark" onclick="select('Todos')">
-                                <i class="fas fa-th-list"></i>  Todos</button>
+                                <i class="fas fa-th-list"></i> Todos</button>
                         </div>
-
                     </div>
 
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -108,29 +132,41 @@
                             <div class="media-body">
                                 <h5 class="mt-0 mb-1 texto-contenido"></h5>
                                 La disfunción familiar es una familia en la que los conflictos, la mala conducta, y
-                                muchas veces
-                                el abuso por parte de los miembros individuales se producen continua y regularmente, lo
-                                que
-                                lleva a otros miembros a acomodarse a tales acciones. A veces los niños crecen en tales
-                                familias
-                                con el entendimiento de que tal disposición es normal. Las familias disfuncionales son
-                                principalmente el resultado de adultos codependientes, y también pueden verse afectados
-                                por las
-                                adicciones, como el abuso de sustancias (alcohol, drogas, etc.)
+                                muchas veces el abuso por parte de los miembros individuales se producen continua y
+                                regularmente, lo
+                                que lleva a otros miembros a acomodarse a tales acciones. . Para mayor información: <a
+                                    href="https://es.wikipedia.org/wiki/Familia_disfuncional#:~:text=Expectativas%20poco%20realistas.&text=Falta%20de%20respeto%2C%E2%80%8B%20especialmente%20el%20desprecio.&text=Disfunci%C3%B3n%20social%20o%20aislamiento%E2%80%8B,hijos%20que%20no%20tienen%20amigos).">aquí</a>
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <ul>
+                                                <h5>Rangos de Interpretación</h5>
+                                                <li>40 a 48, Leve </li>
+                                                <li>30 a 39, Moderada</li>
+                                                <li>Menos de 30, Severa</li>
+
+                                            </ul>
+                                        </td>
+                                        <td><img src="/img/disfuncion.jpg" class="mr-3 captura2"></td>
+                                    </tr>
+
+                                </table>
+
                             </div>
-                            <img src="/img/disfuncion.jpg" class="mr-3 captura2 rounded">
+
                         </div>
                         <div>
-                            <button type="button" class="btn btn-warning" onclick="select('PA')">
-                                <i class="fas fa-tractor"></i>  Producción Agraria</button>
+                            <button type="button" class="btn btn-outline-success" onclick="select('PA')">
+                                <i class="fas fa-tractor"></i> Producción Agraria</button>
                             <button type="button" class="btn btn-outline-primary" onclick="select('AS')">
-                                <i class="fas fa-laptop-code"></i>  Análisis de
+                                <i class="fas fa-laptop-code"></i> Análisis de
                                 Sistemas</button>
                             <button type="button" class="btn btn-dark" onclick="select('Todos')">
-                                <i class="fas fa-th-list"></i>  Todos</button>
+                                <i class="fas fa-th-list"></i> Todos</button>
                         </div>
                     </div>
 
+                    <!-- 
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-profile-tab">
                         <div class="media">
                             <div class="media-body">
@@ -146,7 +182,10 @@
                             <img src="/img/edades.jpg" class="mr-3 captura2 rounded">
                         </div>
                     </div>
+
+                    -->
                 </div>
+
                 <div class="grafica mb-4 shadow" id="grafica">
 
                 </div>
@@ -154,6 +193,21 @@
 
             </div>
         </div>
+
+
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://winbitunir.000webhostapp.com/"> Winbit Peru.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+
         <!-- scripts de Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -21,11 +21,18 @@
   object-fit: cover;
 }
 
-h1,h2,h3,h4,h5,h6{
-  color: rgb(8, 65, 189);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+h1,h2,h3,h4,h6{
+  color: rgb(8, 80, 214);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+h5{
+  color: rgba(252, 133, 22, 0.856);
+}
+
+.texto-collapse{
+  font-size: 14px;
+}
 .grafica{
   width: 100%;
   height: auto;

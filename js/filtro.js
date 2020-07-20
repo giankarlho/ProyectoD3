@@ -1,8 +1,8 @@
 tipo = 'IE'
 function graficar() {
     colores = {
-        'PA': '#8888FF',
-        'AS': '#22cc22'
+        'AS': '#8888FF',
+        'PA': '#00FF00'
     }
     // por defecto es el 1er gráfico de inteligencia emocional por alumno
     datos = []
@@ -60,6 +60,7 @@ function render2(data) {
         .remove()
 }
 
+/*
 function render3(data) {
 
     margin = { top: 10, right: 30, bottom: 30, left: 40 },
@@ -123,34 +124,6 @@ function render3(data) {
         .exit()
         .remove()
 }
-/*
-var mapa = data.map(function (i) { return parseInt(i.edad) })
- 
-var histograma = d3.histogram()
-                    .value(function (d) { return d.edad })
-                    .domain(x.domain())
-                    .thresholds(x.ticks(10))
-
-bins = histogram(data)                        
-
-var canvas = d3.select('#grafica')
-    .append("svg")
-    .attr('width', 500)
-    .attr('height', 500)
-
-var bars = canvas.selectAll(".bar")
-    .data(histograma)
-    .enter()
-    .append('g')
-
-bars.append("rect")
-    .attr('x',function (d) { return d.Edad*5; })
-    .attr('y',0) 
-    .attr('width',function (d) { return d.Edad*5-5; })
-    .attr('height',function (d) { return d.Edad*20; })            
-    .attr('fill','steelblue')
-
-    console.log('ydale UUUUUUUUU')
 */
 
 
@@ -179,7 +152,7 @@ function tipoTab(tipo, data) {
     switch (tipo) {
         case 'IE': render1(data); break;
         case 'DF': render2(data); break;
-        case 'Edades': render3(data); break;
+       // case 'Edades': render3(data); break;
     }
 }
 
