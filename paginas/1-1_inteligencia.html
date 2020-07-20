@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/mystyle.css">
+    <title>Mis Proyectos de D3</title>
+    <script src="/js/d3.js"></script>
+    <script src="/js/filtro.js"></script>
+</head>
+
+<body onload="graficar()">
+    <!-- navbar -->
+    <div class="navbar-navbar-expand-lg navbar-light bg-light shadow mb-4">
+        <div class="container-fluid-nav text-center">
+            <a href="#"></a><img src="./img/logoVG.png" class="logo">
+        </div>
+    </div>
+    <!-- /navbar -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Herramientas de Visualización</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Biografía -->
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="./img/fotogvs.jpg" class="avatar rounded-circle"><br>
+                    <h4>Giancarlo Valencia Sotomayor</h4>
+                </div>
+                <p>Soy un entusiasta de la tecnología y del buen comer</p>
+                <p>Sapiente tempora quasi eaque. Harum quasi maxime facere placeat maiores ex dolores sit asperiores
+                    itaque mollitia labore, alias possimus a, molestias, fuga recusandae similique repudiandae sapiente
+                    doloribus. Magni, distinctio delectus.</p>
+            </div>
+            <!-- /Biografía -->
+
+            <!-- Proyectos -->
+            <div class="col-md-8">
+                <h3>Distribución de Alumnos por Carrera</h3>
+                <p>
+                    
+                </p>
+                <div>
+                    <button type="button" class="btn btn-success" onclick="select('PA')">Producción Agraria</button>                                        
+                    <button type="button" class="btn btn-outline-primary" onclick="select('AS')">Análisis de Sistemas</button>                    
+                    <button type="button" class="btn btn-dark" onclick="select('Todos')">Todos</button>
+                </div>
+                <div class="grafica mb-4 shadow" id="grafica">
+                </div>
+
+            </div>
+            <!-- /Proyectos -->
+
+        </div>
+    </div>
+
+    <!-- scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- fin script de Bootstrap -->
+</body>
+
+</html>

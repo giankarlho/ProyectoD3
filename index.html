@@ -7,18 +7,23 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'
+        type='text/css'>
+    <script src="https://kit.fontawesome.com/01ac2b3c84.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/bootstrap-social.css">
     <link rel="stylesheet" href="/css/mystyle.css">
     <title>Mis Proyectos de D3</title>
     <script src="/js/d3.js"></script>
     <script src="/js/filtro.js"></script>
 </head>
 
-<body onload="graficar()">
+<body onload="iniciar()">
+
     <!-- navbar -->
     <div class="navbar-navbar-expand-lg navbar-light bg-light shadow mb-4">
-        <div class="container-fluid-nav text-center">
-            <a href="#"></a><img src="./img/logoVG.png" class="logoVG"> &nbsp&nbsp&nbsp
-            <a href="#"></a><img src="./img/unir.png" class="logoUnir">
+        <div class="container-fluid-nav text-center">            
+            <a href="index.html"></a><img src="./img/logoVG.png" class="text-center logoVG"> &nbsp&nbsp&nbsp
+            <a href="index.html"></a><img src="./img/unir.png" class="text-center logoUnir">
         </div>
     </div>
     <!-- /navbar -->
@@ -30,17 +35,29 @@
             </div>
         </div>
         <div class="row mt-4">
+
             <!-- Biografía -->
             <div class="col-md-4">
                 <div class="text-center">
                     <img src="./img/fotogvs.jpg" class="avatar rounded-circle"><br>
                     <h4>Giancarlo Valencia Sotomayor</h4>
                 </div>
-                <p>Soy un entusiasta de la tecnología y del buen comer</p>
-                <p>Sapiente tempora quasi eaque. Harum quasi maxime facere placeat maiores ex dolores sit asperiores
-                    itaque mollitia labore, alias possimus a, molestias, fuga recusandae similique repudiandae sapiente
-                    doloribus. Magni, distinctio delectus.</p>
+                <p class="texto-contenido">Soy un joven entusiasta de casi 40 años, aficionado de la tecnología, expedientes X y del buen comer. Ing. Industrial y de Sistemas con experiencia en Gestión Pública y Privada. 
+                    Y desde hace 4 años laboro como docente en el IEST Valle Grande, dictando cursos de: Algoritmo y Estructura de Datos, Programación Estructurada con IOT, Programación Orientada a Objetos, Taller de Programación I y II, Telemática I, Desarrollo Empresarial con Java, Machine Learning, Tecnologías de Internet, Sistemas Distribuidos y Seguridad Informática. Y los fines de semana me ocupo de la gestión de la cocina y limpieza del hogar con 5 hijos.</p>
+                <div class="text-center">
+                    <a href="https://www.facebook.com/Giankarlo.V.S/" class="fb-ic mr-3" role="button" target="_blank"><i
+                            class="fab fa-lg fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/giancarlo-valencia-sotomayor-a29a6640" class="li-ic mr-3"
+                        role="button" target="_blank"><i class="fab fa-lg fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/UCAy8Qkj1AQuqnKiogNdshBA?view_as=subscriber"
+                        class="yt-ic mr-3" role="button" target="_blank"><i class="fab fa-lg fa-youtube"></i></a>
+                    <a href="https://github.com/giankarlho" class="git-ic mr-3" role="button" target="_blank"><i
+                            class="fab fa-lg fa-github"></i></a>
+                    <a href="paginas/contacto.html" class="email-ic mr-3" role="button" target="_blank"><i class="far fa-lg fa-envelope"></i></a>
+                </div>
+
             </div>
+
             <!-- /Biografía -->
 
             <!-- Proyectos -->
@@ -56,53 +73,117 @@
                                 <a href="paginas/trabajo1.html">
                                     <h5 class="mt-0">Gráficos de Barras con D3 - I</h5>
                                 </a>
-                                Aquí se muestra gráficos en barra sobre la distribución de IE (inteligencia emocional) entre los alumnos de las carreras de Análisis de Sistemas y Producción Agraria
-                                
+                                <p class="texto-contenido">Aquí se muestra gráficos en barra sobre la distribución de IE (inteligencia
+                                    emocional)
+                                    entre los alumnos de las carreras de Análisis de Sistemas y Producción Agraria</p>
                             </div>
                         </div>
 
                         <div class="media">
-                            <img src="img/grafico2.png" class="mr-3 captura rounded">
+                            <img src="img/grafico2.png" class="align-self-start mr-3 captura rounded">
                             <div class="media-body">
                                 <a href="#">
                                     <h5 class="mt-0">Gráficos de Barras y Pirámide con D3 - II</h5>
                                 </a>
-            
-                                Aquí se mostrará gráficos circulares, de torta y distribución entre los alumnos por módulo. Se aplicará agrupación con SVG.
+                                <p class="texto-contenido">Aquí se mostrará gráficos circulares, de torta y distribución entre los alumnos por
+                                    módulo. Se aplicará agrupación con SVG. </p>
                             </div>
                         </div>
 
                         <div class="media">
-                            <img src="img/grafico3.jpg" class="mr-3 captura rounded">
+                            <img src="img/grafico3.jpg" class="align-self-start mr-3 captura rounded">
                             <div class="media-body">
                                 <a href="#">
                                     <h5 class="mt-0">Gráfico con Mapas en D3 - III</h5>
-                                </a>                                
-                                Aquí se mostrará la distribución de zonas de procedencia en el mapa del Perú.
-
+                                </a>
+                                <p class="texto-contenido">Aquí se mostrará la distribución de zonas de procedencia en el mapa del Perú según latitud y altitud.</p>
                             </div>
                         </div>
 
                         <div class="media">
-                            <img src="img/grafico4.jpg" class="mr-3 captura rounded">
+                            <img src="img/grafico4.jpg" class="align-self-start mr-3 captura rounded">
                             <div class="media-body">
                                 <a href="#">
                                     <h5 class="mt-0">Proyecto Final</h5>
-                                </a>                                
-                                Aquí se mostrará la distribución de zonas de procedencia en el mapa del Perú.
-
+                                </a>
+                                <p>Aquí se mostrará la distribución de zonas de procedencia en el mapa del Perú.</p>
                             </div>
                         </div>
 
-
                     </div>
-                    <div class="card-footer"></div>
+                    <div class="card-footer">
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseInteligencia" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-head-side-virus"></i> Inteligencia emocional
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseFamiliar" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-people-arrows"></i> Disfunción Familiar
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseRendimiento" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-user-graduate"></i> Rendimiento Académico
+                            </a>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseValleGrande" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-university"></i> IESTP Valle Grande
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseInteligencia">
+                            <div class="card card-body">
+                                <strong class="texto-contenido">¿Qué es la Inteligencia Emocional?</strong>
+                                La IE examina la importancia de la faceta emocional como elemento clave en la
+                                inteligencia. Para mayor información: <a
+                                    href="https://psicologiaymente.com/inteligencia/inteligencia-emocional">aquí</a>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseFamiliar">
+                            <div class="card card-body">
+                                <strong class="texto-contenido">¿Qué es la Disfunción Familiar?</strong>
+                                Las familias disfuncionales no tienen ningún límite social, ni financiero, ni
+                                intelectual. Sin embargo, hasta décadas recientes, el concepto de una familia
+                                disfuncional no fue tomada en serio por los profesionales (terapeutas, trabajadores
+                                sociales, maestros, consejeros, clérigos, etc), especialmente entre las clases media y
+                                alta. Para mayor información: <a
+                                    href="https://es.wikipedia.org/wiki/Familia_disfuncional#:~:text=Expectativas%20poco%20realistas.&text=Falta%20de%20respeto%2C%E2%80%8B%20especialmente%20el%20desprecio.&text=Disfunci%C3%B3n%20social%20o%20aislamiento%E2%80%8B,hijos%20que%20no%20tienen%20amigos).">aquí</a>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseRendimiento">
+                            <div class="card card-body">
+                                <strong class="texto-contenido">¿Qué es el Rendimiento Académico?</strong>
+                                Hace referencia a la evaluación del conocimiento adquirido en el ámbito escolar,
+                                terciario o universitario. Para mayor información: <a
+                                    href="https://www.ecured.cu/Rendimiento_acad%C3%A9mico">aquí</a>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseValleGrande">
+                            <div class="card card-body">
+                                <strong class="texto-contenido">¿Qué es el IESTP Valle Grande?</strong>
+                                Es una Institución de formación profesional técnica que ofrece dos carreras
+                                tecnológicas: Análisis de Sistemas y Producción Agraria. Para mayor información: <a
+                                    href="http://www.vallegrande.edu.pe/">aquí</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /Proyectos -->
-
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> Winbit Peru.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
 
     <!-- scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -116,5 +197,6 @@
         crossorigin="anonymous"></script>
     <!-- fin script de Bootstrap -->
 </body>
+
 
 </html>

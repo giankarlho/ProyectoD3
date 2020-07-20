@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/mystyle.css">
+
     <title>Mis Proyectos de D3</title>
-    <script src="/js/d3.js"></script>
-    <script src="/js/filtro.js"></script>
+    <script src="../js/d3.js"></script>
+    <script src="../js/filtro.js"></script>
+    <script src="https://kit.fontawesome.com/01ac2b3c84.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="graficar()">
     <!-- navbar -->
     <div class="navbar-navbar-expand-lg navbar-light bg-light shadow mb-4">
-        <div class="container-fluid-nav text-center">
-            <a href="#"></a><img src="./img/logoVG.png" class="logo">
+        <div class="container-fluid-nav text-center">            
+            <a href="/index.html"><img src="/img/logoVG.png" class="text-center logoVG"></a> &nbsp&nbsp&nbsp
+            <a href="/index.html"><img src="/img/unir.png" class="text-center logoUnir"></a>
         </div>
     </div>
     <!-- /navbar -->
@@ -32,45 +35,136 @@
             <!-- Biografía -->
             <div class="col-md-4">
                 <div class="text-center">
-                    <img src="./img/fotogvs.jpg" class="avatar rounded-circle"><br>
+                    <img src="/img/fotogvs.jpg" class="avatar rounded-circle"><br>
                     <h4>Giancarlo Valencia Sotomayor</h4>
                 </div>
-                <p>Soy un entusiasta de la tecnología y del buen comer</p>
-                <p>Sapiente tempora quasi eaque. Harum quasi maxime facere placeat maiores ex dolores sit asperiores
-                    itaque mollitia labore, alias possimus a, molestias, fuga recusandae similique repudiandae sapiente
-                    doloribus. Magni, distinctio delectus.</p>
+                <p class="texto-contenido">Soy un joven entusiasta de casi 40 años, aficionado de la tecnología, expedientes X y del buen comer. Ing. Industrial y de Sistemas con experiencia en Gestión Pública y Privada. 
+                    Y desde hace 4 años laboro como docente en el IEST Valle Grande, dictando cursos de: Algoritmo y Estructura de Datos, Programación Estructurada con IOT, Programación Orientada a Objetos, Taller de Programación I y II, Telemática I, Desarrollo Empresarial con Java, Machine Learning, Tecnologías de Internet, Sistemas Distribuidos y Seguridad Informática. Y los fines de semana me ocupo de la gestión de la cocina y limpieza del hogar con 5 hijos.</p>
+                <div class="text-center">
+                    <a href="https://www.facebook.com/Giankarlo.V.S/" class="fb-ic mr-3" role="button" target="_blank"><i
+                            class="fab fa-lg fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/giancarlo-valencia-sotomayor-a29a6640" class="li-ic mr-3"
+                        role="button" target="_blank"><i class="fab fa-lg fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/UCAy8Qkj1AQuqnKiogNdshBA?view_as=subscriber"
+                        class="yt-ic mr-3" role="button" target="_blank"><i class="fab fa-lg fa-youtube"></i></a>
+                    <a href="https://github.com/giankarlho" class="git-ic mr-3" role="button" target="_blank"><i
+                            class="fab fa-lg fa-github"></i></a>
+                    <a href="paginas/contacto.html" class="email-ic mr-3" role="button" target="_blank"><i class="far fa-lg fa-envelope"></i></a>
+                </div>
+
             </div>
             <!-- /Biografía -->
 
             <!-- Proyectos -->
             <div class="col-md-8">
-                <h3>Distribución de Alumnos por Carrera</h3>
-                <p> </p>
-                <div>
-                    <button class="btn btn-outline-primary" onclick="select('PA')">Producción Agraria</button>
-                    <button class="btn btn-outline-primary" onclick="select('AS')">Análisis de Sistemas</button>
-                    <button class="btn btn-outline-primary" onclick="select('Todos')">Todos</button>
+                <h3>Resultados preliminares de la Inteligencia Emocional y Disfunción Familiar</h3>
+                <p>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                            onclick="load('IE')" role="tab" aria-controls="pills-home" aria-selected="true">Inteligencia
+                            Emocional</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                            onclick="load('DF')" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Disfunción Familiar</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
+                            onclick="load('Edades')" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Edadades por Carrera</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1 texto-contenido"></h5>
+                                La Inteligencia Emocional es uno de los conceptos clave para comprender el rumbo que ha
+                                tomado la psicología en las últimas décadas. De un modelo preocupado fundamentalmente en
+                                los trastornos mentales por un lado y por las capacidades de razonamiento por el otro,
+                                se ha pasado a otro en el que se considera que las emociones son algo intrínseco a
+                                nuestro comportamiento y actividad mental no patológica y que, por consiguiente, son
+                                algo que debe ser estudiado para comprender cómo somos.
+                            </div>
+                            <img src="/img/inteligencia.jpg" class="mr-3 captura2 rounded">
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-warning" onclick="select('PA')">
+                                <i class="fas fa-tractor"></i>  Producción Agraria</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="select('AS')">
+                                <i class="fas fa-laptop-code"></i>  Análisis de Sistemas</button>
+                            <button type="button" class="btn btn-dark" onclick="select('Todos')">
+                                <i class="fas fa-th-list"></i>  Todos</button>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1 texto-contenido"></h5>
+                                La disfunción familiar es una familia en la que los conflictos, la mala conducta, y
+                                muchas veces
+                                el abuso por parte de los miembros individuales se producen continua y regularmente, lo
+                                que
+                                lleva a otros miembros a acomodarse a tales acciones. A veces los niños crecen en tales
+                                familias
+                                con el entendimiento de que tal disposición es normal. Las familias disfuncionales son
+                                principalmente el resultado de adultos codependientes, y también pueden verse afectados
+                                por las
+                                adicciones, como el abuso de sustancias (alcohol, drogas, etc.)
+                            </div>
+                            <img src="/img/disfuncion.jpg" class="mr-3 captura2 rounded">
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-warning" onclick="select('PA')">
+                                <i class="fas fa-tractor"></i>  Producción Agraria</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="select('AS')">
+                                <i class="fas fa-laptop-code"></i>  Análisis de
+                                Sistemas</button>
+                            <button type="button" class="btn btn-dark" onclick="select('Todos')">
+                                <i class="fas fa-th-list"></i>  Todos</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-1 texto-contenido""></h5>
+                                Se tiene una muestra de 280 alumnos: 75 son de la Carrera de Análisis de Sistemas y 205
+                                de Producción Agraria. Para la Disfunción familiar se usó la Escala de Cohesión y
+                                Adaptabilidad Familiar (FACES III), para al análisis de la Inteligencia Emocional se
+                                tomará el Inventario de Cociente Emocional de BarOn en la etapa juvenil. Con respecto al
+                                rendimiento académico, se tomará el promedio ponderado del último semestre académico
+                                2019. Y para la predicción se tomará y comparará Algoritmos supervisados y/o Redes
+                                Neuronales.
+                            </div>
+                            <img src="/img/edades.jpg" class="mr-3 captura2 rounded">
+                        </div>
+                    </div>
                 </div>
                 <div class="grafica mb-4 shadow" id="grafica">
+
                 </div>
+                <!-- /Proyectos -->
 
             </div>
-            <!-- /Proyectos -->
-
         </div>
-    </div>
-
-    <!-- scripts de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-    <!-- fin script de Bootstrap -->
+        <!-- scripts de Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <!-- fin script de Bootstrap -->
 </body>
 
 </html>

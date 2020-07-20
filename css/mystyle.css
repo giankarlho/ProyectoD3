@@ -6,7 +6,7 @@
 }
 
 .avatar{
-  height: 130px;
+  height: 200px;
 }
 
 .captura{
@@ -15,13 +15,15 @@
   object-fit: cover;
 }
 
-h1,h2,h3,h4,h5,h6{
-  color: rgb(7, 70, 143);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.captura2{
+  height: 128px;
+  width: 128px;
+  object-fit: cover;
 }
 
-body{
-  color: darkblue;
+h1,h2,h3,h4,h5,h6{
+  color: rgb(8, 65, 189);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .grafica{
@@ -43,10 +45,13 @@ body{
 
 .hbar{
   height: 25px;
-  color: #0f0f0f;
-  background-color: #333333;
+  background-color: #0c0b0b;
   margin-top: 5px;
   margin-bottom: 5px;
   text-align: right;
   padding-right: 5px;
+}
+
+.texto-contenido{
+  text-align: justify;
 }
