@@ -1,4 +1,42 @@
-tipo = 'IE'
+
+tipo = 'IE'             // IE , FD
+como = 'Ordenar por'    // 
+comparador=''       
+carrera = 'Todos'   // PA, AS, Todos
+
+
+comparaxedadIEMaMe = function (a, b) {
+    return a.edad < b.edad ? 1 : -1
+}
+
+comparaxedadIEMeMa = function (a, b) {
+    return a.edad > b.edad ? 1 : -1
+}
+
+comparaxieMaMe = function (a, b) {
+    return a.IE < b.IE ? 1 : -1
+}
+
+comparaxieMeMa = function (a, b) {
+    return a.IE > b.IE ? 1 : -1
+}
+
+comparaxedadDFMaMe = function (a, b) {
+    return a.edad < b.edad ? 1 : -1
+}
+
+comparaxedadDFMeMa = function (a, b) {
+    return a.edad > b.edad ? 1 : -1
+}
+
+comparaxdfMaMe = function (a, b) {
+    return a.FD < b.FD ? 1 : -1
+}
+
+comparaxdfMeMa = function (a, b) {
+    return a.FD > b.FD ? 1 : -1
+}
+
 function graficar() {
     colores = {
         'AS': '#8888FF',
@@ -8,7 +46,8 @@ function graficar() {
     datos = []
     load(tipo)
 }
-function render1(data) {
+
+function render1(data, comparador = null) {
 
     hbars = d3.select('#grafica')
         .selectAll('div.hbar')
@@ -28,13 +67,17 @@ function render1(data) {
         .text(function (d) {
             return d.IE + ' con ' + d.edad + ' años'
         })
+
+    if (comparador)
+        hbars.sort(comparador)
+
     d3.selectAll('div.hbar')
         .data(data)
         .exit()
         .remove()
 }
 
-function render2(data) {
+function render2(data, comparador = null) {
 
     hbars = d3.select('#grafica')
         .selectAll('div.hbar')
@@ -54,11 +97,60 @@ function render2(data) {
         .text(function (d) {
             return d.FD + ' con ' + d.edad + ' años'
         })
+
+    if (comparador)
+        hbars.sort(comparador)
+
     d3.selectAll('div.hbar')
         .data(data)
         .exit()
         .remove()
 }
+
+function load(tipo) {
+    //alert(tipo)
+    d3.csv('/datos/alumnos.csv')
+        .then(function (data) {
+            datos = data
+            tipoTab(tipo, data)
+        })
+}
+
+function select(TipCarrera) {    
+    d = datos.filter(function (d, i) {
+        carrera = TipCarrera
+        if (TipCarrera == 'Todos') {
+            return true
+        }        
+        return TipCarrera == d.Carrera        
+    })
+    tipoTab(tipo, d)
+}
+
+function tipoTab(variable, data) {
+    switch (variable) {
+        case 'IE': tipo = 'IE'; render1(data,comparador); break;
+        case 'DF': tipo = 'DF'; render2(data,comparador); break;
+    }
+}
+
+function ordenar(como) {
+    switch (como) {
+        case 'edadIEMaMe': comparador = comparaxedadIEMaMe; break;
+        case 'edadIEMeMa': comparador = comparaxedadIEMeMa; break;
+        case 'ieMaMe': comparador = comparaxieMaMe; break;
+        case 'ieMeMa': comparador = comparaxieMeMa; break;
+        case 'edadDFMaMe': comparador = comparaxedadDFMaMe; break;
+        case 'edadDFMeMa': comparador = comparaxedadDFMeMa; break;
+        case 'dfMaMe': comparador = comparaxdfMaMe; break;
+        case 'dfMeMa': comparador = comparaxdfMeMa; break;
+        default: comparador = ''; break;
+    }
+    select(carrera);
+    //(tipo == 'IE') ? render1(datos, comparador) : render2(datos, comparador);
+    
+}
+
 
 /*
 function render3(data) {
@@ -102,7 +194,7 @@ function render3(data) {
     var y = d3.scaleLinear()
                 .range([height, 0]);
 
-    y.domain([0, d3.max(bins, function (d) { return d.length; })]);  
+    y.domain([0, d3.max(bins, function (d) { return d.length; })]);
 
     svg.append("g")
         .call(d3.axisLeft(y));
@@ -125,37 +217,3 @@ function render3(data) {
         .remove()
 }
 */
-
-
-
-
-function load(tipo) {
-    //alert(tipo)
-    d3.csv('/datos/alumnos.csv')
-        .then(function (data) {
-            datos = data
-            tipoTab(tipo, data)
-        })
-}
-
-function select(carrera) {
-    d = datos.filter(function (d, i) {
-        if (carrera == 'Todos') {
-            return true
-        }
-        return carrera == d.Carrera
-    })
-    tipoTab(tipo, d)
-}
-
-function tipoTab(tipo, data) {
-    switch (tipo) {
-        case 'IE': render1(data); break;
-        case 'DF': render2(data); break;
-       // case 'Edades': render3(data); break;
-    }
-}
-
-
-
-

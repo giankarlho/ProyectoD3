@@ -11,7 +11,7 @@
 
     <title>Mis Proyectos de D3</title>
     <script src="../js/d3.js"></script>
-    <script src="../js/filtro.js"></script>
+    <script src="../js/codigo1.js"></script>
     <script src="https://kit.fontawesome.com/01ac2b3c84.js" crossorigin="anonymous"></script>
 </head>
 
@@ -66,29 +66,23 @@
             <div class="col-md-8">
                 <h3>Resultados preliminares de la Inteligencia Emocional y Disfunción Familiar</h3>
                 <p>
+
+                    <!-- Categorías I -->
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
-                            onclick="load('IE')" role="tab" aria-controls="pills-home" aria-selected="true">Inteligencia
+                        <a class="nav-link active" id="IE-tab" data-toggle="pill" href="#IE" onclick="load('IE')"
+                            role="tab" aria-controls="pills-home" aria-selected="true">Inteligencia
                             Emocional</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
-                            onclick="load('DF')" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">Disfunción Familiar</a>
+                        <a class="nav-link" id="DF-tab" data-toggle="pill" href="#DF" onclick="load('DF')" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">Disfunción Familiar</a>
                     </li>
-                    <!-- 
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
-                            onclick="load('Edades')" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">Edadades por Carrera</a>
-                    </li>
-                    -->
                 </ul>
+                <!-- Fin de Categorías I -->
 
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                        aria-labelledby="pills-home-tab">
+                    <div class="tab-pane fade show active" id="IE" role="tabpanel" aria-labelledby="IE-tab">
                         <div class="media">
                             <div class="media-body">
                                 <h5 class="mt-0 mb-1 texto-contenido"></h5>
@@ -111,11 +105,8 @@
                                         </td>
                                         <td><img src="/img/inteligencia.jpg" class="mr-3 captura2 rounded"></td>
                                     </tr>
-
                                 </table>
-
                             </div>
-
                         </div>
                         <div>
                             <button type="button" class="btn btn-outline-success" onclick="select('PA')">
@@ -124,10 +115,17 @@
                                 <i class="fas fa-laptop-code"></i> Análisis de Sistemas</button>
                             <button type="button" class="btn btn-dark" onclick="select('Todos')">
                                 <i class="fas fa-th-list"></i> Todos</button>
+                            <select class="custom-select mt-2 mb-2" id="ordenamiento" onchange="ordenar(this.value)">
+                                <option selected>Ordenar por</option>
+                                <option value="edadIEMaMe">Por Edad de mayor a menor</option>
+                                <option value="edadIEMeMa">Por Edad de menor a mayor</option>
+                                <option value="ieMaMe">Por Valores de IE de mayor a menor</option>
+                                <option value="ieMeMa">Por Valores de IE de menor a mayor</option>
+                            </select>
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="tab-pane fade" id="DF" role="tabpanel" aria-labelledby="DF-tab">
                         <div class="media">
                             <div class="media-body">
                                 <h5 class="mt-0 mb-1 texto-contenido"></h5>
@@ -144,46 +142,30 @@
                                                 <li>40 a 48, Leve </li>
                                                 <li>30 a 39, Moderada</li>
                                                 <li>Menos de 30, Severa</li>
-
                                             </ul>
                                         </td>
                                         <td><img src="/img/disfuncion.jpg" class="mr-3 captura2"></td>
                                     </tr>
-
                                 </table>
-
                             </div>
-
                         </div>
                         <div>
                             <button type="button" class="btn btn-outline-success" onclick="select('PA')">
                                 <i class="fas fa-tractor"></i> Producción Agraria</button>
                             <button type="button" class="btn btn-outline-primary" onclick="select('AS')">
-                                <i class="fas fa-laptop-code"></i> Análisis de
-                                Sistemas</button>
+                                <i class="fas fa-laptop-code"></i> Análisis de Sistemas</button>
                             <button type="button" class="btn btn-dark" onclick="select('Todos')">
                                 <i class="fas fa-th-list"></i> Todos</button>
+                            <select class="custom-select mt-2 mb-2" id="ordenamiento" onchange="ordenar(this.value)">
+                                <option selected>Ordenar por</option>
+                                <option value="edadDFMaMe">Por Edad de mayor a menor</option>
+                                <option value="edadDFMeMa">Por Edad de menor a mayor</option>
+                                <option value="dfMaMe">Por Valores de DF de mayor a menor</option>
+                                <option value="dfMeMa">Por Valores de DF de menor a mayor</option>
+                            </select>
                         </div>
                     </div>
 
-                    <!-- 
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="media">
-                            <div class="media-body">
-                                <h5 class="mt-0 mb-1 texto-contenido""></h5>
-                                Se tiene una muestra de 280 alumnos: 75 son de la Carrera de Análisis de Sistemas y 205
-                                de Producción Agraria. Para la Disfunción familiar se usó la Escala de Cohesión y
-                                Adaptabilidad Familiar (FACES III), para al análisis de la Inteligencia Emocional se
-                                tomará el Inventario de Cociente Emocional de BarOn en la etapa juvenil. Con respecto al
-                                rendimiento académico, se tomará el promedio ponderado del último semestre académico
-                                2019. Y para la predicción se tomará y comparará Algoritmos supervisados y/o Redes
-                                Neuronales.
-                            </div>
-                            <img src="/img/edades.jpg" class="mr-3 captura2 rounded">
-                        </div>
-                    </div>
-
-                    -->
                 </div>
 
                 <div class="grafica mb-4 shadow" id="grafica">
@@ -207,18 +189,18 @@
         </footer>
         <!-- Footer -->
 
-
-        <!-- scripts de Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-        <!-- fin script de Bootstrap -->
+    </div>
+    <!-- scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- fin script de Bootstrap -->
 </body>
 
 </html>

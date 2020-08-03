@@ -6,12 +6,12 @@
 }
 
 .avatar{
-  height: 200px;
+  height: 150px;
 }
 
 .captura{
-  height: 64px;
-  width: 64px;
+  height: 128px;
+  width: 128px;
   object-fit: cover;
 }
 
@@ -61,4 +61,8 @@ h5{
 
 .texto-contenido{
   text-align: justify;
+}
+
+.viz {
+  background-color: papayawhip;
 }

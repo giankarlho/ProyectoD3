@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/mystyle.css">
+
+    <title>Mis Proyectos de D3</title>
+    <script src="../js/d3.js"></script>
+    <script src="../js/codigo2.js"></script>
+    <script src="https://kit.fontawesome.com/01ac2b3c84.js" crossorigin="anonymous"></script>
+</head>
+
+<body">
+    <!-- navbar -->
+    <div class="navbar-navbar-expand-lg navbar-light bg-light shadow mb-4">
+        <div class="container-fluid-nav text-center">
+            <a href="/index.html"><img src="/img/logoVG.png" class="text-center logoVG"></a> &nbsp&nbsp&nbsp
+            <a href="/index.html"><img src="/img/unir.png" class="text-center logoUnir"></a>
+        </div>
+    </div>
+    <!-- /navbar -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Herramientas de Visualización</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Biografía -->
+            <div class="col-md-2">
+                <div class="text-center">
+                    <img src="/img/fotogvs.jpg" class="avatar rounded-circle"><br>
+                    <h5>Giancarlo Valencia Sotomayor</h5>
+                </div>
+                <p class="texto-contenido">Aquí se representa un ordenamiento y valores </p>
+                <div class="text-center">
+                    <a href="https://www.facebook.com/Giankarlo.V.S/" class="fb-ic mr-3" role="button"
+                        target="_blank"><i class="fab fa-lg fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/giancarlo-valencia-sotomayor-a29a6640" class="li-ic mr-3"
+                        role="button" target="_blank"><i class="fab fa-lg fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/UCAy8Qkj1AQuqnKiogNdshBA?view_as=subscriber"
+                        class="yt-ic mr-3" role="button" target="_blank"><i class="fab fa-lg fa-youtube"></i></a>
+                    <a href="https://github.com/giankarlho" class="git-ic mr-3" role="button" target="_blank"><i
+                            class="fab fa-lg fa-github"></i></a>
+                    <a href="paginas/contacto.html" class="email-ic mr-3" role="button" target="_blank"><i
+                            class="far fa-lg fa-envelope"></i></a>
+                </div>
+
+            </div>
+            <!-- /Biografía -->
+
+            <!-- Proyectos -->
+            <div class="col-md-10">
+                <h3>Distribución de Alumnos</h3>
+                <p>
+
+                    <!-- Categorías I -->
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="IE-tab" data-toggle="pill" href="#IE" onclick="load('IE')"
+                            role="tab" aria-controls="pills-home" aria-selected="true">Gráfico de Barras Horizontal
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="DF-tab" data-toggle="pill" href="#DF" onclick="load('DF')" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">Scatter del Rendimiento Académico</a>
+                    </li>
+                </ul>
+                <!-- Fin Categorías I -->
+
+                <div id="grafica" class="viz mb-4 shadow"></div>
+
+            </div>
+            <!-- /Proyectos -->
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://winbitunir.000webhostapp.com/"> Winbit Peru.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+    </div>
+
+    <script>
+        margin = { top: 10, right: 30, bottom: 30, left: 40 }
+        ancho = d3.select('#grafica').style('width').slice(0, -2)
+        alto = d3.select('#grafica').style('height').slice(0, -2)
+
+        y = d3.scaleLinear()
+            .range([alto, 0]);
+        x = d3.scaleLinear()
+            .range([0, ancho])
+
+        svg = d3.select("#grafica")
+            .append("svg")
+            .attr("width", ancho)
+            .attr("height", alto)
+            .append("g")
+            .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
+
+        function render(data) {
+
+            x.domain([0, d3.max(data, d => d.edad)])
+            console.log('La edad máxima es ' + d3.max(data, d => d.edad))
+            svg.append("g")
+                .attr("transform", "translate(0," + ancho + ")")
+                .call(d3.axisBottom(x));
+
+            histogram = d3.histogram()
+                .value(function (d) { return d.edad; }) // I need to give the vector of value
+                .domain(x.domain()) // then the domain of the graphic
+                .thresholds(x.ticks(70)); // then the numbers of bins
+
+            bins = histogram(data);
+
+            y.domain([0, 30]); // d3.hist has to be called before the Y axis
+
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            // append the bar rectangles to the svg element
+            svg.selectAll("rect")
+                .data(bins)
+                .enter()
+                .append("rect")
+                .attr("x", 1)
+                .attr("transform", function (d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
+                //.attr("width", function (d) { return x(d.x1) - x(d.x0) - 1; })
+                .attr("width", '10px')
+                .attr("height", function (d) { return alto - y(d.length); })
+                .style("fill", '#69b3a2')
+        }
+
+        function load() {
+            d3.csv('/datos/alumnos.csv').then(function (data) {
+                console.log(data)
+                data.forEach(function (d) {
+                    d.edad = +d.edad
+                })
+                render(data)
+            })
+        }
+
+        load()
+
+    </script>
+
+    <!-- scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- fin script de Bootstrap -->
+    </body>
+
+</html>
